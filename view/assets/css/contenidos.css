@@ -1,0 +1,200 @@
+section{
+	display: flex;
+	float: left;
+	width: 70%;
+}
+
+aside{
+float: right;
+  width: 28%;
+  background-color: #0c5dc6;
+  /* box-shadow: 0px 3px 5px #888888; */
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+/*Contenido*/
+.thumbnail{
+  border: 1px solid #ddd;
+  border-radius: 4px; 
+  padding: 5px; 
+  width: auto;
+  max-width: 250px; 
+  display: inline-flex;
+}
+
+.thumbnail:hover{
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+#post-description{
+	margin-top: 20px;
+	text-align: justify;
+}
+
+/*Aside*/
+#info-aside{
+	margin-top: 21px;
+	margin-left: 21px;
+}
+
+#info-aside a{
+	display: flex;
+}
+
+#info-aside a:hover{
+	text-decoration: none;
+}
+
+#info-aside a:visited{
+	text-decoration: none;
+}
+
+#info-aside a>p{
+	margin-top: 5px;
+	margin-left: 10px;
+	color: #F6F5DA;
+	font-size: 13px;
+}
+
+
+#details{
+	margin-top: 80px;
+	font-size: 17px;
+	color: #F6F5DA;
+}
+
+#user-image{
+	height: 90px;
+	width: 90px;
+}
+
+/*Comentarios*/
+#comments{
+	margin-top: 100px;
+	display: block;
+	margin-bottom: 150px;
+}
+
+.comment-userimage{
+	margin-right: 20px;
+}
+
+.new-comment{
+	display: inline-flex;
+	margin-bottom: 60px;
+}
+
+.old-comment{
+	display: inline-flex;
+}
+
+/*Audios*/
+.audio-controls{
+	text-align: center;
+	border:solid 1px #e0e0e0;
+	height: 52px;
+	padding: 0px;
+	padding-top: 5px;
+}
+
+.audio-name{
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+	background-color: #E4E4E4;
+	border:solid 1px #cecaca;
+}
+
+.audio-name p{
+	margin: 15px 0px;
+}
+
+#audio-list{
+	margin-top: 20px;
+}
+
+#description{
+	width: 100%;
+}
+
+
+/*Tutorial*/
+#video-content{
+
+}
+
+iframe{
+	border:0;
+}
+
+
+/*Redimencionar contenido*/
+@media (min-width: 837px){
+	.container{
+
+    position: relative;
+    height: 100%;
+	}
+}
+
+@media screen and (max-width: 991px){
+	#details{
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 837px){
+	section{
+		display: inline-flex;
+		width: 100%;
+	}
+
+	aside{
+		width: 100%;
+		float: left;
+		height: auto;
+		position: initial;
+	}
+
+	#info-aside{
+		display: inline-flex;
+	}
+
+	#details{
+		margin-left: 35px;
+		margin-top: 0px;
+	}
+} 
+
+@media screen and (max-width: 991px){
+	.audio-name{
+		text-align: center;
+	}
+}
+
+.audio_element img{
+	max-width: 100%;
+}
+
+.audio_description{
+	background-color: #e3e3e3;
+	padding-bottom: 0.5px;
+	margin-bottom: 30px;
+
+}
+
+.audio_description p{
+	text-align: center;
+}
+
+
+.baudio{
+	background-color: #c8c8c8;
+	border:0px;
+}
+
+.baudio:hover{
+	background-color: #b3b1b1; 
+}

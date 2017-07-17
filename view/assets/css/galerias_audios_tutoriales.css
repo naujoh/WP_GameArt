@@ -1,0 +1,150 @@
+/*Barra para filtrar contenido*/
+#filter{
+	display: inline-flex;
+	padding-left: 0px;
+}
+
+#filter p{
+	font-size: 18px;
+	padding: 5px 0;
+	margin: 0px 20px 0px 0px;
+}
+
+#dropdownMenu{
+	color: #333;
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
+
+}
+
+/*Estilos para galerias (galerias.php)*/
+.thumbnail{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	text-align: center;
+  background-color: #e7e7e7;
+  border: none;	
+}
+
+.frame{
+	justify-content: center;
+	vertical-align: center;
+	width: inherit;
+	height: 100%;
+	display:flex;
+  overflow: hidden;
+}
+
+.frame-in{
+	align-self: center;
+	overflow:hidden;
+}
+
+.pages{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/*Estilos para audios (audios.php)*/
+
+.parent{
+	padding: 15px;
+	display: block;
+	height: 70px;
+	background-color: #E0E0E0;
+	margin:10px;
+}
+
+.description{
+	float: left;
+	height: 100%;
+}
+
+.description h4{
+	margin: 0;
+}
+
+.description p{
+	margin: 0; 
+}
+
+a{
+	color: black; 
+}
+
+.control-button{
+	float: right;
+	margin-top: 4px;
+}
+
+.control-button button{
+	background-color: #4183F6;
+	border: none;
+}
+
+.control-button button>span{
+	margin-top: 3px;
+	margin-left: 2px;
+}
+
+/*Estilos para tutoriales (tutoriales.php)*/
+.cover-tutorial{
+	display: block;
+	float: right;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.info-tutorial{
+	float: right;
+	width: 100%;
+	height: auto;
+}
+
+.image{
+	margin: 0 auto;
+	margin-top: 50px;
+	max-width: 404px;
+	height: 180px;
+	border:2.5px solid white;
+	box-shadow: 0px 2px 3px #888888;
+ 	position: relative;
+	overflow: hidden;
+}
+
+.image a>img{
+	/*max-height: 100%;*/  
+  max-width: 100%;
+ 
+  width: auto;
+  /*height: auto;*/
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+}
+
+.content-tutorial{
+	margin:0 auto;
+	max-width: 404px;
+	height: 180px;
+}
+
+.content-tutorial h3{
+	margin-top: 15px;
+}
+
+.bottom-content{
+	font-size: 11px;
+	font-weight: bold;
+	display: flex;
+}
+
+.count-comments{
+	margin-left: 25px;
+}

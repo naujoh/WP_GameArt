@@ -1,0 +1,154 @@
+#content-main{
+	background-color: #eff2f6; /*#225aad*/
+	width: 100%;
+}
+
+#main-image{
+	text-align: center;
+	width: 100%;
+	background-color: #0064b2;  /*#225aad*/
+}
+
+#main-image img{
+	padding-left: initial;
+	width: 72%;
+}
+
+#welcome-message{
+	padding: 3%;
+	width: 100%;
+	background-color: #dadada;
+	text-align: center;
+}
+
+#welcome-message h1{
+	margin:0;
+	padding: 0;
+	font-size: 7vw;
+}
+
+#welcome-message p{
+	color: #777777;
+	font-size: 3vw;
+}
+
+.contenido-imagenes{
+    width: 100%;
+    background-color: #333333;
+    margin-left: 0%;
+	border-width: 2px 2px 0px 2px;
+	border-style: solid;
+    border-color: #333333;
+}
+
+.contenido-imagenes div{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.contenido-imagenes a{
+	text-decoration: none;
+	color:black;
+	display: inline-block;
+	margin-bottom: 2px;
+	width: calc(50% - 1px);
+	margin-right: 2px;
+	background-color: #eff2f6;
+	position:relative
+}
+
+.contenido-imagenes a:nth-of-type(2n){
+	margin-right: 0;
+}
+
+.recent-content{
+	margin-top: 20%;
+}
+
+@media screen and (min-width: 50em){
+	.recent-content{
+		margin-top: 10%;
+		float: left;
+		width: 100%;
+		display: inline-flex;
+	}
+
+	.contenido-imagenes a{ width: calc(25% - 1.5px); }
+
+	.contenido-imagenes a:nth-of-type(2n){ margin-right: 2px; }
+
+	.contenido-imagenes a:nth-of-type(4n){ margin-right: 0; }
+
+	.aside-image{
+		width: 60%;
+	}
+}
+
+.contenido-imagenes img{
+	border:none;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	background: #ccc;
+	/*transition: transform .2s ease-in-out;*/
+}
+
+.contenido-imagenes a:hover img{
+	/*transform: scale(1.05);*/
+}
+
+.aside-image{
+
+	height: 100%;
+	text-align: center;
+	margin: auto 0;
+
+}
+
+.aside-image img{
+	height: auto;
+	width: 80%;
+	
+}
+
+#last{
+	margin-bottom: 10%
+}
+
+#prueba{
+	position: relative;
+}
+
+.hover-content{
+	color: white;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none !important;
+	/*background-color: #ff5e34;*/
+	text-align: center;
+	vertical-align: middle;
+}
+
+.hover-content img{
+  width: 30%;
+  height: auto;
+  display: flex;
+  margin-left: calc(35%);
+  margin-top: 10%;
+  border-radius: 90%;
+  border: 3px solid white;
+}
+
+.hover-content p.username{
+
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.contenido-imagenes a:hover div{
+	display: block !important;
+}
