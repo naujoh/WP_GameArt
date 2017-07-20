@@ -33,12 +33,12 @@
 }
 
 .contenido-imagenes{
-    width: 100%;
-    background-color: #333333;
-    margin-left: 0%;
+  width: 100%;
+  background-color: #333333;
+  margin-left: 0%;
 	border-width: 2px 2px 0px 2px;
 	border-style: solid;
-    border-color: #333333;
+  border-color: #333333;
 }
 
 .contenido-imagenes div{
@@ -54,7 +54,7 @@
 	width: calc(50% - 1px);
 	margin-right: 2px;
 	background-color: #eff2f6;
-	position:relative
+	position:relative;
 }
 
 .contenido-imagenes a:nth-of-type(2n){

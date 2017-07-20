@@ -16,7 +16,7 @@ class crudModel extends gameArt{
 
 			"tipo_pago"=>array("SELECT * FROM tipo_pago", "SELECT * FROM pago WHERE id_tipo_pago=:id_tipo_pago"), 
 
-			"categoria"=>array("SELECT * FROM categoria c JOIN tipo_publicacion tp on c.id_tipo_publicacion=tp.id_tipo_publicacion", "SELECT * FROM publicacion p JOIN tipo_publicacion tp ON p.id_tipo_publicacion=tp.id_tipo_publicacion JOIN categoria c ON tp.id_tipo_publicacion=c.id_tipo_publicacion WHERE id_categoria=:id_categoria"), 
+			"categoria"=>array("SELECT * FROM categoria c JOIN tipo_publicacion tp on c.id_tipo_publicacion=tp.id_tipo_publicacion", "SELECT * FROM publicacion p JOIN categoria c ON p.id_categoria=c.id_categoria WHERE c.id_categoria=:id_categoria"), 
 
 			"tipo_publicacion"=>array("SELECT * FROM tipo_publicacion", "SELECT * FROM categoria WHERE id_tipo_publicacion=:id_tipo_publicacion"),
 
@@ -24,7 +24,9 @@ class crudModel extends gameArt{
 
 			"nivel_dificultad"=>array("SELECT * FROM nivel_dificultad", "SELECT * FROM tutorial WHERE id_nivel_dificultad=:id_nivel_dificultad"),
 
-			"tipo_recurso"=>array("SELECT * FROM tipo_recurso", "SELECT * FROM recurso WHERE id_tipo_recurso=:id_tipo_recurso")
+			"tipo_recurso"=>array("SELECT * FROM tipo_recurso", "SELECT * FROM recurso WHERE id_tipo_recurso=:id_tipo_recurso"),
+
+			"cat_tipo_pub"=>array("SELECT * FROM tipo_publicacion ORDER BY id_tipo_publicacion ASC", "SELECT id_tipo_publicacion as id, tipo_publicacion as option FROM tipo_publicacion ORDER BY tipo_publicacion ASC")
 		);		
 	}
 
@@ -50,10 +52,23 @@ class crudModel extends gameArt{
 		$this->color = 'success';
 	}
 
-	public function createCategoria($params){
+/*
+ * Metodo para traer los datos de una tupla a editar.	
+ */
+	public function dataEdit($action, $t, $id_name, $params){
+		$data = null;
+		if($action=='edit')
+			$data = $this->consultar('SELECT * FROM '.$t.' WHERE '.$id_name.'=:'.$id_name, $params);
+		return $data;
 	}
-	// public function crudUpdateData($t, $params){
-		
-	// }
+
+	public function crudUpdateData($t, $params, $keys){
+		$this->msg = 'Error al actualizar elemento de '. $t;
+		$this->color = 'danger';
+		if($this->actualizar($t, $params, $keys)){
+			$this->msg = 'Se actualizo el elemento de '. $t;
+			$this->color = 'success';	
+		}
+	}
 }
 ?>

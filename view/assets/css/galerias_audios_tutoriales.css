@@ -148,3 +148,24 @@ a{
 .count-comments{
 	margin-left: 25px;
 }
+
+.panel-body{
+	width: 100%;
+	float: left;
+}
+
+.dropdown-contents{
+  display: inline-flex; 
+  width: 100%;
+  /*margin-left: 10px;*/
+}
+
+.dropdown-contents label{
+	width: auto;
+	margin: auto 30px auto 30px;
+
+}
+
+.dropdown-contents select{
+	width: auto;
+}

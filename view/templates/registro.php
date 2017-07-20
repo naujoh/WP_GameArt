@@ -13,18 +13,29 @@
 		<div class="row form-content">
 			<form method="POST" t="index.php" enctype="multipart/form-data">
 				<div class="col-md-6">
-					<div class="form-group">
-						<label>Nombre completo</label>
-						<input class="form-control" type="text" name="nombre" required>
+					<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input class="form-control" type="text" name="nombre" required>
+						</div>
 					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Apellido paterno</label>
+							<input class="form-control" type="text" name="apaterno" required>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Apellido materno</label>
+							<input class="form-control" type="text" name="amaterno" required>
+						</div>
+					</div>	
+					</div>									
 					<div class="form-group">
 						<label>Sexo</label>
-						<select class="form-control">
-							<option value="null" selected="selected" disabled>Selecciona una opcion</option>
-							<option value="arte2d">Masculino</option>
-							<option value="arte3d">Femenino</option>
-							<option value="texturas">Indefinido</option>
-						</select>						
+						<?php echo $sexo_data; ?>		
 					</div>
 					<div class="form-group">
 						<label>Nombre de usuario (como el mundo te conocerá)</label>
@@ -42,17 +53,18 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Imagen de perfil (tamaño recomendado 150x150)</label>
-						<input type="file" name="imagen_perfil" required>
+						<input type="file" name="perfil_image" required>
 					</div>
 					<div class="form-group">
 						<label>Biografia (una breve descripcion sobre ti)</label>
 						<textarea class="form-control" rows="14" name="biografia" placeholder="Escribe algo sobre ti ..." required></textarea>
 					</div>
 					<div class="form-group">
-						<button class="btn btn-primary" id="send-button" type="submit">Resgistrar</button>
+						<button class="btn btn-primary" id="send-button" type="submit" name="new_register">Resgistrar</button>
 					</div>
 				</div>
-				<input type="hidden" name="t" value="registro">
+				<input type="hidden" name="c" value="register">
+				<!-- <input type="hidden" name="t" value="registro"> -->
 			</form>
 		</div> <!--row-->
 	</div> <!--container-->

@@ -31,9 +31,9 @@
 									</figure>
 									<div class="hover-content hvr-radial-out">
 										<div class="hvr-pop">
-										<img class="" src="view/resources/images/user_images/'.$ga_data[$key]['imagen_perfil'].'" alt="Imagen de usuario">
-										<p class="username hvr-grow">'.$ga_data[$key]['nombre_usuario'].'</p>
-										<p class="postname">'.$ga_data[$key]['titulo'].'</p>
+											<img class="" src="view/resources/images/user_images/'.$ga_data[$key]['imagen_perfil'].'" alt="Imagen de usuario">
+											<p class="username hvr-grow">'.$ga_data[$key]['nombre_usuario'].'</p>
+											<p class="postname">'.$ga_data[$key]['titulo'].'</p>
 										</div>
 									</div>
 								</a>';
@@ -48,88 +48,25 @@
 					</div>					
 					<div class="contenido-imagenes">
 						<div>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
+							<?php
+						  foreach ($tu_data as $key => $value) {
+								echo '
+								<a class="root-content" href="#">
+									<figure>
+										<img src="view/resources/images/post_images/'.$tu_data[$key]['nombre_recurso'].'" alt="item">
+									</figure>
+									<div class="hover-content hvr-radial-out">
+											<div class="hvr-pop">
+											<img class="" src="view/resources/images/user_images/'.$tu_data[$key]['imagen_perfil'].'" alt="Imagen de usuario">
+											<p class="username hvr-grow">'.$tu_data[$key]['nombre_usuario'].'</p>
+											<p class="postname">'.$tu_data[$key]['titulo'].'</p>
+										</div>
+									</div>
+								</a>';
+							} 
+							?>
 						</div>
-					</div> <!--contenido-imagenes-->
+					</div> <!--contenido-tutoriales-->
 				</div> <!--recent-content-->
 				<div class="recent-content" id="last">
 					<div class="aside-image">
@@ -137,86 +74,23 @@
 					</div>
 					<div class="contenido-imagenes">
 						<div>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/4.jpg" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
-							<a class="root-content" href="#">
-								<figure>
-									<img src="assets/images/1.png" alt="item">
-								</figure>
-								<div class="hover-content">
-									<img src="assets/images/3.jpg" alt="Imagen de usuario">
-									<p class="username">Usuario</p>
-									<p class="postname">Nombre del Post</p>
-								</div>
-							</a>
+							<?php
+						  foreach ($au_data as $key => $value) {
+								echo '
+								<a class="root-content" href="#">
+									<figure>
+										<img src="view/resources/images/post_images/'.$au_data[$key]['nombre_recurso'].'" alt="item">
+									</figure>
+									<div class="hover-content hvr-radial-out">
+											<div class="hvr-pop">
+											<img class="" src="view/resources/images/user_images/'.$au_data[$key]['imagen_perfil'].'" alt="Imagen de usuario">
+											<p class="username hvr-grow">'.$au_data[$key]['nombre_usuario'].'</p>
+											<p class="postname">'.$au_data[$key]['titulo'].'</p>
+										</div>
+									</div>
+								</a>';
+							} 
+							?>
 						</div>
 					</div> <!--contenido-imagenes-->
 				</div> <!--recent-content-->

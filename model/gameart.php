@@ -1,17 +1,19 @@
 <?php
 class gameArt{
-	var $conexion;
+	var $connection;
+	public $allow_types;
 
 	function __construct(){
 		include('model/configuracion.php');
-		$this->conexion=$conexion; 
+		$this->connection=$connection; 
+		$this->allow_types = array('images'=>array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'));
 	}
 
 	/**
 	 * Metodo generico para realizar consultas
  	 */
 	function consultar($sql, $param=null){
-		$stm= $this->conexion->prepare($sql);
+		$stm= $this->connection->prepare($sql);
 		if(!is_null($param)){
 			foreach ($param as $key => $value) {
 				$stm->bindValue(':'.$key, $value);
@@ -30,12 +32,10 @@ class gameArt{
 		array_walk($data, function(&$item){$item=' :'.$item;});
 		$sql = 'INSERT INTO '.$table.'('.implode(" ",explode(":",implode(",",$data))).') values ('.implode(",", $data).')';
 		try{
-			$stm=$this->conexion->prepare($sql);
+			$stm=$this->connection->prepare($sql);
 			foreach ($params as $key => $value) {
-				// echo $key .'>>'. $value; 
 				$stm->bindValue(':'.$key, $value);
 			}
-			// echo $sql; die();
 			return $stm->execute();		
 		} 
 		catch (Exception $e){
@@ -46,8 +46,32 @@ class gameArt{
 	/**
 	* Metodo generico para actualizar en la BD
 	*/
-	function actualizar(){
-
+	function actualizar($table, $params, $keys){
+		// print_r($keys);
+		// print_r($params); die();
+		$data = array_keys($params);
+		$a_keys = array_keys($keys);
+		array_walk($data, function(&$item){$item=$item.'=?';});
+		array_walk($a_keys, function(&$item){$item=$item.'=?';});
+		$sql = 'UPDATE '.$table.' SET '.implode(",", $data).' WHERE '.implode(" and ", $a_keys);
+		// echo $sql; die();
+		try{
+			$stm=$this->connection->prepare($sql);
+			$i=1;
+			foreach ($params as $key => $value) {
+				$stm->bindValue($i, $value);
+				$i++;
+			}
+			foreach ($keys as $key => $value) {
+				$stm->bindValue($i, $value);
+				$i++;
+			}
+			return $stm->execute();		
+			// echo $stm->execute(); die();
+		} 
+		catch (Exception $e){
+			echo 'La exception: '. $e->getMessage(). '\n';
+		}
 	}
 
 	/**
@@ -67,7 +91,7 @@ class gameArt{
 		}
 		$sql = $sql . $where;
 		try{
-			$stm = $this->conexion->prepare($sql);
+			$stm = $this->connection->prepare($sql);
 			foreach ($params as $key => $value) {
 				$stm->bindParam(':'.$key, $value);
 			}
@@ -76,5 +100,32 @@ class gameArt{
 			echo 'Oh no!: '.$e->getMessage();
 		}
 	}
+
+	public function checkTypeOfFile($file, $type){
+		// print_r($this->allow_types['images']); die();
+		switch ($type) {
+			case 'image':
+				if(in_array($file['type'], $this->allow_types['images']))
+					return true;
+				else
+					return false;
+				break;
+		}
+		return false;
+	}
+
+	// public function dropDownList($query, $name, $id_selected=null ){
+	// 	$data = $this->consultar($sql);
+	// 	$select = '<select name="'.$name.'">';
+	// 	$select .= '<option value=""></option>';
+	// 	foreach ($data as $key => $value) {
+	// 		$selected = "";
+	// 		if($id_selected==$data[$key]['id'])
+	// 			$selected = ' selected';
+	// 		$select .= '<option value="'.$data[$key]['id'].'"'.$selected.'>'.$data[$key]['opcion'].'</option>';
+	// 	}
+	// 	$select .= '</select>';
+	// 	return $select;		
+	// }
 }	
 ?>
