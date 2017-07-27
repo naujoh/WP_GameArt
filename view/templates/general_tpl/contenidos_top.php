@@ -9,23 +9,12 @@
 	<div class="panel panel-default">
 		<div class="container">
 			<div class="panel-body" id="filter">
-				<form class="dropdown-contents">
+				<h3>Elementos</h3>
+<!-- 				<form class="dropdown-contents">
 					<label >Filtrar contenido por:</label> 
 					<?php echo $dropdown_data; ?>	
-				</form>			
-<!-- 				<div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				    Todo
-				    <span class="caret"></span>
-				  </button>
-
-				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-				    <li><a href="#">Musica de fondo</a></li>
-				    <li><a href="#">Efectos de sonido</a></li>
-				    <li><a href="#">Ultima semana</a></li>
-				    <li><a href="#">Ultimo mes</a></li>
-				  </ul>
-				</div> -->
+					<input>
+				</form>		 -->	
 			</div>
 		</div>
 	</div>

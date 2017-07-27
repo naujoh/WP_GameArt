@@ -6,7 +6,10 @@ class gameArt{
 	function __construct(){
 		include('model/configuracion.php');
 		$this->connection=$connection; 
-		$this->allow_types = array('images'=>array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'));
+		$this->allow_types = array(
+			'images'=>array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'),
+			'audios'=>array('audio/mpeg', 'audio/vnd.wav', 'audio/mp4', 'audio/ogg')
+		);
 	}
 
 	/**
@@ -31,6 +34,7 @@ class gameArt{
 		$data = array_keys($params);
 		array_walk($data, function(&$item){$item=' :'.$item;});
 		$sql = 'INSERT INTO '.$table.'('.implode(" ",explode(":",implode(",",$data))).') values ('.implode(",", $data).')';
+		// echo $sql; die();
 		try{
 			$stm=$this->connection->prepare($sql);
 			foreach ($params as $key => $value) {
@@ -110,22 +114,75 @@ class gameArt{
 				else
 					return false;
 				break;
+			case 'audio':
+				if(in_array($file['type'], $this->allow_types['audios']))
+					return true;
+				else
+					return false;
+				break;			
 		}
 		return false;
 	}
 
-	// public function dropDownList($query, $name, $id_selected=null ){
-	// 	$data = $this->consultar($sql);
-	// 	$select = '<select name="'.$name.'">';
-	// 	$select .= '<option value=""></option>';
-	// 	foreach ($data as $key => $value) {
-	// 		$selected = "";
-	// 		if($id_selected==$data[$key]['id'])
-	// 			$selected = ' selected';
-	// 		$select .= '<option value="'.$data[$key]['id'].'"'.$selected.'>'.$data[$key]['opcion'].'</option>';
-	// 	}
-	// 	$select .= '</select>';
-	// 	return $select;		
-	// }
+	public function multiUploads($files=array(), $resource_type){
+		$route = "";
+		$return_data = array();
+		$uploaded = false;
+		$msg = "Se ha insertado el contenido";
+		$color = 'success';
+		$i = 0;
+		if($resource_type=="image"){
+			$route = "view/resources/images/post_images/";
+			foreach($files as $file){
+				if(!empty($_FILES['galeria']['tmp_name'][$i])){
+					$ext = explode('.', $_FILES['galeria']['name'][$i]);
+					$type['type'] = $_FILES['galeria']['type'][$i];
+					if($this->checkTypeOfFile($type,'image')){
+						$source = $_FILES['galeria']['tmp_name'][$i];
+						$name=$_SESSION['usuario']['nombre_usuario'].$i.'.'.$ext[count($ext)-1];
+						$destination = $route.$name;
+						if(move_uploaded_file($source, $destination)){
+							array_push($return_data, $name);
+							$uploaded = true;
+						}else{
+							$msg = 'Error al subir el archivo '.$_FILES['galeria']['name'][$i];
+						}
+					}else{
+						//extension no permitida
+						$msg = 'El archivo '.$_FILES['galeria']['name'][$i].' no tiene una extension permitida'; 
+					}
+				}
+				$i++;
+			} // foreach			
+		}else{
+			$route = "view/resources/audios/";
+			foreach($files as $file){
+				if(!empty($_FILES['audio']['tmp_name'][$i])){
+					$type['type'] = $_FILES['audio']['type'][$i];
+					if($this->checkTypeOfFile($type,'audio')){
+						$source = $_FILES['audio']['tmp_name'][$i];
+						$destination = $route.$_FILES['audio']['name'][$i];
+						if(move_uploaded_file($source, $destination)){
+							array_push($return_data, $_FILES['audio']['name'][$i]);
+							$uploaded = true;
+						}else{
+							$msg = 'Error al subir el archivo '.$_FILES['audio']['name'][$i];
+							$colo = 'danger';
+						}
+					}else{
+						//extension no permitida
+						$msg = 'El archivo '.$_FILES['audio']['name'][$i].' no tiene una extension permitida, solo se aceptan las extensiones: jpg, png y gif'; 
+						$colo = 'danger';
+					}
+				}
+				$i++;
+			} // foreach					
+		}
+		$return_data['uploaded'] = $uploaded;
+		$return_data['msg'] = $msg;
+		$return_data['color'] = $color;
+		//print_r($return_data); die();
+		return $return_data;
+	}
 }	
 ?>

@@ -17,7 +17,21 @@ body {
 #c-inner{
 	background-color: black;
 }
+li .in{
+    /*background-color: black;*/
+    padding-left:10px;
+    padding-right:10px;
+    width: 200px;
+    font-size: 15px;
+}
 
+.element{
+    display: block;
+    margin:0;
+    padding:0;
+    border-bottom: 1px solid #e2e2e2;
+    color: #23527c;
+}
 /*Loggin en navbar*/
 #login-dp{
     min-width: 250px;
@@ -25,6 +39,7 @@ body {
     overflow:hidden;
     background-color: #efefef;
 }
+
 #login-dp .help-block{
     font-size:12px    
 }
@@ -62,6 +77,16 @@ body {
 
 #nuevo{
     color: #545454;
+}
+
+.user-images-login {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+}
+
+.image-user {
+    padding: 10px !important;
 }
 
 @media(max-width:837px){
@@ -123,8 +148,6 @@ footer div .social{
     margin: 0 5%;
     border-bottom: 1px solid #d9d9d9;
     height: 260px;
-    padding-top: 100px;
-
 }
 
 .social a{
@@ -145,3 +168,6 @@ footer div a, footer div p{
     margin-top: 35px;
 }
 
+.alert{
+    margin-bottom: 0px;
+}

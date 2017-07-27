@@ -5,6 +5,7 @@
 
 #send-button{
 	float: right;
+	margin-bottom: 40px;
 }
 
 /*Informacion del usuario (informacion_usuario.php)*/
@@ -14,19 +15,20 @@
 
 .user-information{
 	width: 30%;
-	height: 100vh;
+	max-height: 100%;
 	color: white;
-	background-color: #00324D;
+	background-color: #0c5dc6;
 }
 
 .user-information img{
 	width: 150px;
 	height: 150px;
+	border: 2px solid white;
 }
 
 .user-information-content{
-	margin-top: 60px;
-	padding: 10px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 	text-align: center;
 }
 
@@ -81,7 +83,7 @@
 }
 
 label{
-	font-weight: 100;
+	font-weight: 100 !important;
 }
 
 textarea{
@@ -94,4 +96,31 @@ textarea{
 
 .t_area_desc{
 	height: 8em !important;
+}
+
+.send-btn{
+	float: right;
+}
+.admin-panel-list{
+	list-style: none;
+	padding-left: 0;
+}
+
+.admin-panel-list li{
+	margin-top: 10px;
+  font-size:18px;
+
+}
+
+.admin-panel-list li > a{
+	display: block;
+	background-color: #d3d2d4;
+	border-left: 5px solid #828282;
+	padding-left: 10px;
+	text-decoration: none;
+	box-shadow: 1px 1px 3px #888888;
+	color: #292929;
+}
+
+.admin-panel-list li > a:hover{
 }

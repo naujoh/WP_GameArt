@@ -25,9 +25,9 @@
 							<?php
 						  foreach ($ga_data as $key => $value) {
 								echo '
-								<a class="root-content" href="#">
+								<a class="root-content" href="index.php?c=galeries&action=post&id_publicacion='.$ga_data[$key]['id_publicacion'].'">
 									<figure>
-										<img src="view/resources/images/post_images/'.$ga_data[$key]['nombre_recurso'].'" alt="item">
+										<img src="view/resources/images/covers/'.$ga_data[$key]['nombre_recurso'].'" alt="item">
 									</figure>
 									<div class="hover-content hvr-radial-out">
 										<div class="hvr-pop">
@@ -44,16 +44,16 @@
 				</div> <!--recent-content-->
 				<div class="recent-content">
 					<div class="aside-image">
-						<a href="#"><img src="view/resources/web_resources/tutoriales.png" alt="Galerias"></a>
+						<a href="#"><img src="view/resources/web_resources/tutoriales.png" alt="Tutoriales"></a>
 					</div>					
 					<div class="contenido-imagenes">
 						<div>
 							<?php
 						  foreach ($tu_data as $key => $value) {
 								echo '
-								<a class="root-content" href="#">
+								<a class="root-content" href="index.php?c=tutorials&action=post&id_publicacion='.$tu_data[$key]['id_publicacion'].'">
 									<figure>
-										<img src="view/resources/images/post_images/'.$tu_data[$key]['nombre_recurso'].'" alt="item">
+										<img src="view/resources/images/covers/'.$tu_data[$key]['nombre_recurso'].'" alt="item">
 									</figure>
 									<div class="hover-content hvr-radial-out">
 											<div class="hvr-pop">
@@ -70,16 +70,16 @@
 				</div> <!--recent-content-->
 				<div class="recent-content" id="last">
 					<div class="aside-image">
-						<a href="#"><img src="view/resources/web_resources/audios.png" alt="Galerias"></a>
+						<a href="#"><img src="view/resources/web_resources/audios.png" alt="Audios"></a>
 					</div>
 					<div class="contenido-imagenes">
 						<div>
 							<?php
 						  foreach ($au_data as $key => $value) {
 								echo '
-								<a class="root-content" href="#">
+								<a class="root-content" href="index.php?c=audios&action=post&id_publicacion='.$au_data[$key]['id_publicacion'].'">
 									<figure>
-										<img src="view/resources/images/post_images/'.$au_data[$key]['nombre_recurso'].'" alt="item">
+										<img src="view/resources/images/covers/'.$au_data[$key]['nombre_recurso'].'" alt="item">
 									</figure>
 									<div class="hover-content hvr-radial-out">
 											<div class="hvr-pop">

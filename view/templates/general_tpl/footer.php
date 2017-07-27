@@ -1,9 +1,10 @@
 	<footer>
 		<div id="contacto">
 			<div class="social">
-				<a href="#">Facebook</a>
+				<!-- <a href="#">Facebook</a>
 				<a href="#">Twitter</a>
-				<a href="#">Google+</a>
+				<a href="#">Google+</a> -->
+				<img src="view/resources/web_resources/home.png" width="100"></img>
 				<p id="contacto">Contacto:</p>
 				<p>14030658@itcelaya.edu.mx</p>
 			</div>

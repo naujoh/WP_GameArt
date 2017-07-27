@@ -29,3 +29,12 @@ tr>th{
 tr>td{
 	background-color: #e0e0e0; 
 }
+
+.cover{
+	width: 80px;
+	height: 80px;
+}
+
+.table_pub>tbody>tr>td{
+	vertical-align: middle;
+}

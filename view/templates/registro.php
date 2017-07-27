@@ -14,24 +14,24 @@
 			<form method="POST" t="index.php" enctype="multipart/form-data">
 				<div class="col-md-6">
 					<div class="row">
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Nombre</label>
-							<input class="form-control" type="text" name="nombre" required>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Nombre</label>
+								<input class="form-control" type="text" name="nombre" required>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Apellido paterno</label>
-							<input class="form-control" type="text" name="apaterno" required>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Apellido paterno</label>
+								<input class="form-control" type="text" name="apaterno" required>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Apellido materno</label>
-							<input class="form-control" type="text" name="amaterno" required>
-						</div>
-					</div>	
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Apellido materno</label>
+								<input class="form-control" type="text" name="amaterno" required>
+							</div>
+						</div>	
 					</div>									
 					<div class="form-group">
 						<label>Sexo</label>
@@ -53,7 +53,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Imagen de perfil (tamaño recomendado 150x150)</label>
-						<input type="file" name="perfil_image" required>
+						<input type="file" name="perfil_image">
 					</div>
 					<div class="form-group">
 						<label>Biografia (una breve descripcion sobre ti)</label>
@@ -64,7 +64,6 @@
 					</div>
 				</div>
 				<input type="hidden" name="c" value="register">
-				<!-- <input type="hidden" name="t" value="registro"> -->
 			</form>
 		</div> <!--row-->
 	</div> <!--container-->

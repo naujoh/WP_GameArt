@@ -1,5 +1,5 @@
 <?php
-include('model/gameart.php');
+include_once('model/gameart.php');
 class crudModel extends gameArt{
 
 	public $querys;
