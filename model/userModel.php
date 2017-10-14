@@ -157,7 +157,7 @@ class userModel extends gameArt{
 			$mail->SMTPAuth = true;
 			$mail->Username = "";
 			$mail->Password = "";
-			$mail->setFrom('14030658@itcelaya.edu.mx', 'Juan Hernandez');
+			$mail->setFrom('', '');
 			$mail->addAddress($user_data[0]['email'], $user_data[0]['email']);
 			$mail->Subject = 'GameArt | Recuperar contrasena';
 			$mail->msgHTML('Estimado usuario a continuacion le enviamos una liga que debera precionar para recuperar su cuenta.<br><a href="http://localhost/GameArt/index.php?c=user&action=restore&activity=write&llave='.$token.'">Recuperar cuenta</a>');
